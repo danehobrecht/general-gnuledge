@@ -1,22 +1,22 @@
 # gnuledge
 
-Remove file:
+Remove file:\
 rm <filename>
 
-Remove empty directories:
+Remove empty directories:\
 rm -d <filename>
 
-Remove directories:
+Remove directories:\
 rm -rf <filename>
 
-Add sudo user:
+Add sudo user:\
 sudo usermod -aG adduser sudo <username>
 
-Encrypt drive:
+Encrypt drive:\
 sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/<partiton>
 
-Clear terminal history:
+Clear terminal history:\
 history -c
 
-Kill all processes:
+Kill all processes:\
 kill -9 -1
