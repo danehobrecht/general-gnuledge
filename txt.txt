@@ -1,0 +1,14 @@
+Remove file:
+rm <filename>
+
+Remove empty directories:
+rm -d <filename>
+
+Remove directories that aren't empty:
+rm -rf <filename>
+
+Add sudo user:
+sudo usermod -aG adduser sudo <username>
+
+Encrypt drive
+sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/<partiton>
