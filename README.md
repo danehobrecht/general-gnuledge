@@ -1,7 +1,7 @@
 # gnuledge
 
 Remove file:\
-rm <filename>
+``rm filename``
 
 Remove empty directories:\
 rm -d <filename>
