@@ -1,5 +1,6 @@
 # gnuledge
 
+Commands
 Remove file:\
 `rm filename`
 
@@ -20,3 +21,7 @@ Clear terminal history:\
 
 Kill all processes:\
 `kill -9 -1`
+
+Locations
+Display server:
+`/etc/gdm3/daemon.conf`
