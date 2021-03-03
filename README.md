@@ -1,5 +1,3 @@
-# gnuledge
-
 # Commands
 Remove file:\
 `rm filename`
