@@ -22,6 +22,6 @@ Clear terminal history:\
 Kill all processes:\
 `kill -9 -1`
 
-Locations
-Display server:
+Locations\
+Display server:\
 `/etc/gdm3/daemon.conf`
