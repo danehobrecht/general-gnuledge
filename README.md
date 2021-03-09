@@ -23,6 +23,9 @@ Kill all processes:\
 Running a file:\
 `./<filename>`
 
+Installing all debian packages in a directory:\
+`sudo dpkg -i *.deb`
+
 # Locations
 Display server:\
 `/etc/gdm3/daemon.conf`
