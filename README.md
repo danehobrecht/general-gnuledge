@@ -29,3 +29,11 @@ Installing all debian packages in a directory:\
 # Locations
 Display server:\
 `/etc/gdm3/daemon.conf`
+
+# Python
+
+Installing django:\
+`pip3 install django`
+
+Creating new django project in a directory:\
+`django-admin startproject <projectname>`
