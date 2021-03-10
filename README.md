@@ -8,8 +8,11 @@ Remove empty directories:\
 Remove directories:\
 `rm -rf <filename>`
 
+Move files:\
+`mv <source> <destination>`
+
 Add sudo user:\
-`sudo usermod -aG adduser sudo <username>`
+`usermod -aG adduser sudo <username>`
 
 Encrypt drive:\
 `sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/<partiton>`
