@@ -1,7 +1,7 @@
 Read documentation. Do not be a help vampire. Yes, you can do it.
 
 ### General terminal ###
-Add sudo user:
+Add sudo user:\
 `usermod -aG adduser sudo <username>`
 
 Clear terminal history:\
@@ -21,8 +21,10 @@ Local display server:\
 ### rm ###
 Remove file:\
 `rm filename`
+
 Remove empty directories:\
 `rm -d <filename>`
+
 Remove directories:\
 `rm -rf <filename>`
 
