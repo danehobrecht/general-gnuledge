@@ -1,4 +1,7 @@
+Read documentation. Do not be a help vampire. Yes, you can do it.
+
 # Commands
+### rm ###
 Remove file:\
 `rm filename`
 
