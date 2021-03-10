@@ -1,6 +1,7 @@
 Read documentation. Do not be a help vampire. Yes, you can do it.
 
-### General terminal ###
+# General terminal
+### Commands ###
 Add sudo user:\
 `usermod -aG adduser sudo <username>`
 
@@ -13,11 +14,11 @@ Kill all processes:\
 Running a file:\
 `./<filename>`
 
-# Locations
+### Locations ###
 Local display server:\
 `/etc/gdm3/daemon.conf`
 
-# Commands
+# Packages
 ### rm ###
 Remove file:\
 `rm filename`
