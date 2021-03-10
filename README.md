@@ -26,6 +26,9 @@ Running a file:\
 Installing all debian packages in a directory:\
 `sudo dpkg -i *.deb`
 
+Start apache2 web server:\
+`sudo systemctl start apache2`
+
 # Locations
 Display server:\
 `/etc/gdm3/daemon.conf`
