@@ -3,10 +3,13 @@ Read documentation. Do not be a help vampire. Yes, you can do it.
 ### General terminal ###
 Add sudo user:\
 `usermod -aG adduser sudo <username>`
+
 Clear terminal history:\
 `history -c`
+
 Kill all processes:\
 `kill -9 -1`
+
 Running a file:\
 `./<filename>`
 
