@@ -44,6 +44,9 @@ Encrypt drive:\
 Start apache2 web server:\
 `systemctl start apache2`
 
+Enable cgi:\
+`a2enmod cgid`
+
 ### django ###
 Installing django:\
 `pip3 install django`
