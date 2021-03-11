@@ -40,6 +40,14 @@ Encrypt drive:\
 ### dpkg ###
 `dpkg -i *.deb`
 
+### flask ###
+
+Establish flask script:\
+`export FLASK_APP=py.py`
+
+Run flash script:\
+`flask run`
+
 ### apache2 ###
 Start apache2 web server:\
 `systemctl start apache2`
