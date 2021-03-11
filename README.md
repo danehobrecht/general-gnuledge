@@ -1,4 +1,4 @@
-Read documentation. Do not be a help vampire. Yes, you can do it.
+***Commands may need to be called in specific directorys and with sudo privelages
 
 # General terminal
 ### Commands ###
@@ -43,7 +43,7 @@ Encrypt drive:\
 ### flask ###
 
 Establish flask script:\
-`export FLASK_APP=py.py`
+`export FLASK_APP=<filename>.py`
 
 Run flash script:\
 `flask run`
@@ -59,5 +59,5 @@ Enable cgi:\
 Installing django:\
 `pip3 install django`
 
-Creating new django project in a directory:\
+Creating new django project:\
 `django-admin startproject <projectname>`
