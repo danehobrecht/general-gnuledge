@@ -1,4 +1,4 @@
-***Commands may need to be called in specific directorys and with sudo privelages
+***Commands may need to be called in specific directorys and with elevated privelages
 
 # General terminal
 ### Commands ###
