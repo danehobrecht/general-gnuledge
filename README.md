@@ -18,6 +18,9 @@ Running a file:\
 Local display server:\
 `/etc/gdm3/daemon.conf`
 
+Apache2 error log:\
+`/var/log/apache2/error.log`
+
 # Packages
 ### rm ###
 Remove file:\
