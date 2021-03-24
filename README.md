@@ -18,7 +18,7 @@ Previous folder:\
 `cd ..`
 
 Copy file:\
-`cp <filename> <filename>`
+`cp <filename-source> <filename-destination>`
 
 ### Locations ###
 Local display server:\
@@ -40,7 +40,7 @@ Remove directories:\
 
 ### mv ###
 Move files:\
-`mv <source> <destination>`
+`mv <filename-source> <filename-destination>`
 
 ### crypsetup ###
 Encrypt drive:\
@@ -61,12 +61,10 @@ Run flash script:\
 Start apache2 web server:\
 `systemctl start apache2`
 
-Enable cgi:\
-`a2enmod cgid`
+Enable module:\
+`a2enmod <modulename>`
 
 ### django ###
-Installing django:\
-`pip3 install django`
 
 Creating new django project:\
 `django-admin startproject <projectname>`
