@@ -14,6 +14,12 @@ Kill all processes:\
 Running a file:\
 `./<filename>`
 
+Previous folder:\
+`cd ..`
+
+Copy file\
+`cp <filename> <filename>`
+
 ### Locations ###
 Local display server:\
 `/etc/gdm3/daemon.conf`
@@ -24,7 +30,7 @@ Apache2 error log:\
 # Packages
 ### rm ###
 Remove file:\
-`rm filename`
+`rm <filename>`
 
 Remove empty directories:\
 `rm -d <filename>`
