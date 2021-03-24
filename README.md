@@ -17,7 +17,7 @@ Running a file:\
 Previous folder:\
 `cd ..`
 
-Copy file\
+Copy file:\
 `cp <filename> <filename>`
 
 ### Locations ###
