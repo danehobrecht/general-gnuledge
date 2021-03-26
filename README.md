@@ -68,3 +68,7 @@ Enable module:\
 
 Creating new django project:\
 `django-admin startproject <projectname>`
+
+# Notes
+
+Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses.
