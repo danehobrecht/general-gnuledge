@@ -44,6 +44,9 @@ Add all files to local repository:\
 Commit:\
 `git commit -m "<commit-text>"`
 
+Purge local origin:\
+`git remote prune origingit remote prune origin`
+
 # Packages
 ### rm ###
 Remove file:\
