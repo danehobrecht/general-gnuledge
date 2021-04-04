@@ -38,7 +38,7 @@ Establish username:\
 Establish email:\
 `git config user.email "someone@someplace.com"`
 
-Add all files to local repository.
+Add all files to local repository:\
 `git add *`
 
 Commit:\
