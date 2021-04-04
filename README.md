@@ -45,7 +45,10 @@ Commit:\
 `git commit -m "<commit-text>"`
 
 Purge local origin:\
-`git remote prune origingit remote prune origin`
+`git remote prune origin`
+
+Remove upstream:\
+`git branch --unset-upstream`
 
 # Packages
 ### rm ###
