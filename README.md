@@ -27,6 +27,23 @@ Local display server:\
 Apache2 error log:\
 `/var/log/apache2/error.log`
 
+### Git
+
+Initalize current directory as local repository:\
+`git init`
+
+Establish username:\
+`git config user.name "someone"`
+
+Establish email:\
+`git config user.email "someone@someplace.com"`
+
+Add all files to local repository.
+`git add *`
+
+Commit:\
+`git commit -m "<commit-text>"`
+
 # Packages
 ### rm ###
 Remove file:\
