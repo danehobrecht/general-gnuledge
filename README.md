@@ -50,6 +50,12 @@ Purge local origin:\
 Remove upstream:\
 `git branch --unset-upstream`
 
+Remove file:\
+`git rm <filename>`
+
+Remove directory:\
+`git rm -rf <foldername>`
+
 # Packages
 ### rm ###
 Remove file:\
@@ -59,7 +65,7 @@ Remove empty directories:\
 `rm -d <filename>`
 
 Remove directories:\
-`rm -rf <filename>`
+`rm -rf <foldername>`
 
 ### mv ###
 Move files:\
