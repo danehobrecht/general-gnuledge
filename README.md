@@ -27,6 +27,16 @@ Local display server:\
 Apache2 error log:\
 `/var/log/apache2/error.log`
 
+### Troubleshooting
+
+Issue: Wi-Fi disabled, airplane/bluetooth are enabled inverse of each other.
+
+If this returns "0":\
+`sysctl net.ipv4.ip_forward`
+
+Run:\
+`sysctl -w net.ipv4.ip_forward=1`
+
 ### Git
 
 Initalize current directory as local repository:\
