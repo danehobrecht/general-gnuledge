@@ -66,6 +66,9 @@ Remove file:\
 Remove directory:\
 `git rm -rf <foldername>`
 
+Commit all tracked files:\
+`git commit --amend`
+
 # Packages
 ### rm ###
 Remove file:\
