@@ -49,7 +49,7 @@ Establish email:\
 `git config user.email "someone@someplace.com"`
 
 Add all files to local repository:\
-`git add *`
+`git add .git clone https://github.com/eromoe/test2`
 
 Commit:\
 `git commit -m "<commit-text>"`
