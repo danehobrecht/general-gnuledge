@@ -64,10 +64,10 @@ wpa_passphrase "Your_SSID" Your_passwd > /etc/wpa_supplicant.conf
 
 to connect type the following command:
 
-sudo ip link set wlp4s0 down\
-sudo ip link set wlp4s0 up\
-sudo wpa_supplicant -B -iwlp4s0 -c /etc/wpa_supplicant.conf -Dnl80211,wext\
-sudo dhclient wlp4s0\
+`sudo ip link set wlp4s0 down`\
+`sudo ip link set wlp4s0 up`\
+`sudo wpa_supplicant -B -iwlp4s0 -c /etc/wpa_supplicant.conf -Dnl80211,wext`\
+`sudo dhclient wlp4s0`\
 
     Note: Multiple comma separated driver wrappers in option -Dnl80211,wext makes wpa_supplicant use the first driver wrapper that is able to initialize the interface (see wpa_supplicant(8)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
 
