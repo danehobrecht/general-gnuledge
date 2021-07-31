@@ -1,33 +1,40 @@
-***Commands may need to be called in specific directories and with elevated privelages***
+**Commands may need to be called in specific directories and/or with elevated privelages**
 
-# General terminal
-### Commands ###
-Add sudo user:\
-`usermod -aG adduser sudo <username>`
+### Transfer files from Linux to iPhone
+ 
+Install dependencies:\
+`apt install samba samba-client cifs-utils`
 
-Clear terminal history:\
-`history -c`
+Add a samba user:\
+`smbpasswd -a <user>`
 
-Kill all processes:\
-`kill -9 -1`
+Verify the user is active:\
+`pdbedit -w -L`
 
-Running a file:\
-`./<filename>`
+Open the samba configuration file located at `/etc/samba/smb.conf` with your favorite text editor and append the following information:
 
-Previous folder:\
-`cd ..`
+```
+[Public]
+   path = /path/to/folder/you'd/like/to/make/public
+   browseable = yes
+   read only = no
+   guest ok = yes
+```
 
-Copy file:\
-`cp <filename-source> <filename-destination>`
+Restart the samba service:\
+`systemctl restart smbd`
 
-### Locations ###
-Local display server:\
-`/etc/gdm3/daemon.conf`
+Verify the samba service is serving local connections with `nmblookup WORKGROUP`. The output should look like this:
 
-Apache2 error log:\
-`/var/log/apache2/error.log`
+```
+<localhost> WORKGROUP<00>
+```
 
-### Troubleshooting
+Connect to <localhost> in the iPhone files app.
+
+Files > "..." > Connect to Server
+
+### Accessing Wi-Fi with no dependencies
 
 Issue: Wi-Fi disabled, airplane/bluetooth are enabled inverse of each other.
 
@@ -50,8 +57,8 @@ To connect to wifi through wpa_supplicant you need to create a wpa_supplicant.co
 with the following lines:
 
     network={
-             ssid="wifi_name"
-             psk="wifi_key"
+             ssid="<ssid>"
+             psk="<password>"
     }
 
 Or you can use wpa_passphrase to create the configuration file (copy and past):
@@ -74,80 +81,6 @@ Note: Multiple comma separated driver wrappers in option -Dnl80211,wext makes wp
 You can connect through wpa_supplicant without wpa_supplicant.conf file:
 
 wpa_supplicant -B -i wlp4s0 -c wpa_passphrase "<ssid>" "<password>" && dhclient wlp4s0
-
-### Git
-
-Initalize current directory as local repository:\
-`git init`
-
-Establish username:\
-`git config user.name "someone"`
-
-Establish email:\
-`git config user.email "someone@someplace.com"`
-
-Add all files to local repository:\
-`git add .git clone https://github.com/eromoe/test2`
-
-Commit:\
-`git commit -m "<commit-text>"`
-
-Purge local origin:\
-`git remote prune origin`
-
-Remove upstream:\
-`git branch --unset-upstream`
-
-Remove file:\
-`git rm <filename>`
-
-Remove directory:\
-`git rm -rf <foldername>`
-
-Commit all tracked files:\
-`git commit --amend`
-
-# Packages
-### rm ###
-Remove file:\
-`rm <filename>`
-
-Remove empty directories:\
-`rm -d <filename>`
-
-Remove directories:\
-`rm -rf <foldername>`
-
-### mv ###
-Move files:\
-`mv <filename-source> <filename-destination>`
-
-### crypsetup ###
-Encrypt drive:\
-`cryptsetup --verbose --verify-passphrase luksFormat /dev/<partiton>`
-
-### dpkg ###
-`dpkg -i *.deb`
-
-### flask ###
-
-Establish flask script:\
-`export FLASK_APP=<filename>.py`
-
-Run flash script:\
-`flask run`
-
-### apache2 ###
-Start apache2 web server:\
-`systemctl start apache2`
-
-Enable module:\
-`a2enmod <modulename>`
-
-### django ###
-
-Creating new django project:\
-`django-admin startproject <projectname>`
 
 # Notes
 
