@@ -34,7 +34,7 @@ Verify a wireless driver (i.e. `wlp4s0`) is available with `ls /sys/class/net`. 
 ```
 enp6s0f0 lo wlp4s0
 ```
-Create a wpa_supplicant.conf file with `nano /etc/wpa_supplicant.conf` and append the following lines:
+Create a temporary configuration file with `nano /etc/wpa_supplicant.conf` and append the following lines:
 ```
 network={
 	ssid="<ssid>"
@@ -47,7 +47,7 @@ Connect to the previously specified S.S.I.D. by running the following commands i
 `wpa_supplicant -B -iwlp4s0 -c /etc/wpa_supplicant.conf -Dnl80211,wext`\
 `dhclient wlp4s0`
 
-Verify that a connection has been established.
+Verify that a connection has been established. You may now purge the temporary configuration file with `rm /etc/wpa_supplicant.conf`.
 
 # Notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
