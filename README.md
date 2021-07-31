@@ -2,6 +2,9 @@
 Install dependencies:\
 `apt install samba samba-client cifs-utils`
 
+Install the first-party "Files" app from the iOS App Store:\
+https://apps.apple.com/us/app/files/id1232058109
+
 Add a samba user with  `smbpasswd -a <user>` and verify said user is active with `pdbedit -w -L`.
 
 Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:
