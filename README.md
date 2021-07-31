@@ -1,5 +1,3 @@
-**Commands may need to be called in specific directories and/or with elevated privelages**
-
 ### Transfer files from Linux to iPhone
  
 Install dependencies:\
@@ -15,7 +13,7 @@ Open the samba configuration file located at `/etc/samba/smb.conf` with your fav
 
 ```
 [Public]
-   path = /path/to/folder/you'd/like/to/make/public
+   path = /path/you'd/like/to/make/public
    browseable = yes
    read only = no
    guest ok = yes
@@ -30,7 +28,7 @@ Verify the samba service is serving local connections with `nmblookup WORKGROUP`
 <localhost> WORKGROUP<00>
 ```
 
-Connect to <localhost> in the iPhone files app.
+Connect to the local host I.P. address in the iPhone files app.
 
 Files > "..." > Connect to Server
 
