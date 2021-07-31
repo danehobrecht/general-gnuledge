@@ -1,4 +1,4 @@
-### Transfer files from Linux to iPhone
+### Wirelessly transfer files from GNU/Linux to iPhone without third-party iOS applications.
 Install dependencies:\
 `apt install samba samba-client cifs-utils`
 
