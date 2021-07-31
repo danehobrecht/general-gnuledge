@@ -2,9 +2,6 @@
 Install dependencies:\
 `apt install samba samba-client cifs-utils`
 
-Install the first-party "Files" app from the iOS App Store:\
-https://apps.apple.com/us/app/files/id1232058109
-
 Add a samba user with  `smbpasswd -a <user>` and verify said user is active with `pdbedit -w -L`.
 
 Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:
@@ -22,7 +19,11 @@ Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look lik
 ```
 <localhost> WORKGROUP<00>
 ```
-Connect to said local host in the iPhone files app: Files > "..." > Connect to Server
+
+Install the first-party "Files" app from the iOS App Store:\
+https://apps.apple.com/us/app/files/id1232058109
+
+Connect to the `<localhost>` in the iPhone files app: Files > "..." > Connect to Server
 
 Access files as needed.
 
@@ -44,7 +45,7 @@ network={
 	psk="<password>"
 }
 ```
-Connect to the previously specified S.S.I.D. by running the following commands in order:\
+Connect to the previously specified `<ssid>` by running the following commands in order:\
 `ip link set wlp4s0 down`\
 `ip link set wlp4s0 up`\
 `wpa_supplicant -B -iwlp4s0 -c /etc/wpa_supplicant.conf -Dnl80211,wext`\
