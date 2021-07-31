@@ -19,23 +19,21 @@ Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look lik
 ```
 <localhost> WORKGROUP<00>
 ```
-Connect to the server with said I.P. in the iPhone files app: Files > "..." > Connect to Server
+Connect to said local host in the iPhone files app: Files > "..." > Connect to Server
 
-Download files as needed.
+Access files as needed.
 
-### Accessing Wi-Fi with no dependencies
+### Establishing a Wi-Fi connection with no dependencies
 
 ...assuming "wpa_supplicant" and "iw" is are pre-installed, which should be the case.
 
-If `sysctl net.ipv4.ip_forward` returns "0", run `sysctl -w net.ipv4.ip_forward=1`.
+Run:\
+`sysctl -w net.ipv4.ip_forward=1`
 
-Verify a wireless driver (i.e. `wlp4s0`) is available:\
-`ls /sys/class/net`\
-A common output looks like:
+Verify a wireless driver (i.e. `wlp4s0`) is available with `ls /sys/class/net`. A common output looks like:
 ```
 enp6s0f0 lo wlp4s0
 ```
-
 Create a wpa_supplicant.conf file with `nano /etc/wpa_supplicant.conf` and append the following lines:
 ```
 network={
@@ -52,4 +50,4 @@ Connect to the previously specified S.S.I.D. by running the following commands i
 Verify that a connection has been established.
 
 # Notes
-Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses.
+"Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
