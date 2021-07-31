@@ -1,11 +1,11 @@
 ### Transfer files from Linux to iPhone
 Install dependencies:\
-`apt install samba samba-client cifs-utils`
+`apt install samba samba-client cifs-utils`\
 Add a samba user:\
-`smbpasswd -a <user>`
+`smbpasswd -a <user>`\
 Verify the user is active:\
-`pdbedit -w -L`
-Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:
+`pdbedit -w -L`\
+Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:\
 ```
 [Public]
    path = /path/you'd/like/to/make/public
@@ -14,7 +14,7 @@ Append the following information to the samba configuration file located at `/et
    guest ok = yes
 ```
 Restart the samba service:\
-`systemctl restart smbd`
+`systemctl restart smbd`\
 Verify the samba service is serving local connections with `nmblookup WORKGROUP`. The output should look like this:
 ```
 <localhost> WORKGROUP<00>
