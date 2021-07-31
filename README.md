@@ -1,7 +1,6 @@
 ### Transfer files from Linux to iPhone
  
-Install dependencies:\
-`apt install samba samba-client cifs-utils`
+Install dependencies: `apt install samba samba-client cifs-utils`
 
 Add a samba user:\
 `smbpasswd -a <user>`
@@ -9,7 +8,7 @@ Add a samba user:\
 Verify the user is active:\
 `pdbedit -w -L`
 
-Open the samba configuration file located at `/etc/samba/smb.conf` with your favorite text editor and append the following information:
+Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:
 
 ```
 [Public]
