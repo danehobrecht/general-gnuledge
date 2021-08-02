@@ -19,7 +19,6 @@ Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look lik
 ```
 <localhost> WORKGROUP<00>
 ```
-
 Install the first-party "Files" app from the iOS App Store:\
 https://apps.apple.com/us/app/files/id1232058109
 
