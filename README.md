@@ -30,7 +30,7 @@ Access files as needed.
 
 ## Establishing a Wi-Fi connection with no dependencies
 
-...assuming "wpa_supplicant" and "iw" is are pre-installed, which should be the case.
+**...assuming "wpa_supplicant" and "iw" is are available, which should be the case.**
 
 Run:\
 `sysctl -w net.ipv4.ip_forward=1`
@@ -56,6 +56,8 @@ Verify that a connection has been established. There are several ways of doing t
 `ping www.searx.be`
 
 You may now purge the temporary configuration file with `rm /etc/wpa_supplicant.conf`.
+
+Access internet as needed.
 
 # Notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
