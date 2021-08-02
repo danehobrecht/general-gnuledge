@@ -49,10 +49,13 @@ network={
 Connect to the previously specified `<ssid>` by running the following commands in order:\
 `ip link set wlp4s0 down`\
 `ip link set wlp4s0 up`\
-`wpa_supplicant -B -iwlp4s0 -c /etc/wpa_supplicant.conf -Dnl80211,wext`\
+`wpa_supplicant -B -i wlp4s0 -c /etc/wpa_supplicant.conf -D nl80211,wext`\
 `dhclient wlp4s0`
 
-Verify that a connection has been established. You may now purge the temporary configuration file with `rm /etc/wpa_supplicant.conf`.
+Verify that a connection has been established. There are several ways of doing this, put a simple ping will be sufficient:\
+`ping www.searx.be`
+
+You may now purge the temporary configuration file with `rm /etc/wpa_supplicant.conf`.
 
 # Notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
