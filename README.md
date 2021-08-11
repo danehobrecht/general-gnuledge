@@ -23,8 +23,8 @@ Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look lik
 If you haven't already, install the first-party "Files" app from the iOS App Store:\
 https://apps.apple.com/us/app/files/id1232058109
 
-Connect to the server in the iPhone files app with the `smb://<localhost>` format:\
-Files > "..." > Connect to Server
+Connect to the server in the iPhone files app with the `smb://<localhost>` format:
+>Files > "..." > Connect to Server
 
 Access files as needed.
 
