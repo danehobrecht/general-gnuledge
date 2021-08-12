@@ -1,6 +1,6 @@
 ## Wirelessly transfer files from GNU/Linux to iOS without third-party iOS applications.
 Install dependencies:\
-`apt install samba samba-client cifs-utils`
+`apt install samba smbclient cifs-utils`
 
 Add a samba user with  `smbpasswd -a <user>` and verify said user is active with `pdbedit -w -L`.
 
