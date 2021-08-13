@@ -11,7 +11,6 @@ Append the following information to the samba configuration file located at `/et
    browseable = yes
    read only = no
    guest ok = yes
-   writeable = yes
 ```
 Restart the samba service:\
 `systemctl restart smbd`
