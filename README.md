@@ -1,4 +1,4 @@
-## Wirelessly transfer files from GNU/Linux to iOS without third-party iOS applications.
+## Wirelessly transfer files from GNU/Linux to iOS without third-party iOS applications
 Install dependencies:\
 `apt install samba samba-client cifs-utils`
 
@@ -24,7 +24,7 @@ If you haven't already, install the first-party "Files" app from the iOS App Sto
 https://apps.apple.com/us/app/files/id1232058109
 
 Connect to the server in the iPhone files app with the `smb://<localhost>` format:\
-Files > "..." > Connect to Server
+>Files > "..." > Connect to Server
 
 Access files as needed.
 
