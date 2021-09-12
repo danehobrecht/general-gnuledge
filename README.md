@@ -1,6 +1,6 @@
 ## Wirelessly transfer files from GNU/Linux to iOS without third-party iOS applications
 Install dependencies:\
-`apt install samba samba-client cifs-utils`
+`apt install samba smbclient cifs-utils`
 
 Add a samba user with  `smbpasswd -a <user>` and verify said user is active with `pdbedit -w -L`.
 
@@ -11,7 +11,6 @@ Append the following information to the samba configuration file located at `/et
    browseable = yes
    read only = no
    guest ok = yes
-   writeable = yes
 ```
 Restart the samba service:\
 `systemctl restart smbd`
@@ -23,7 +22,11 @@ Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look lik
 If you haven't already, install the first-party "Files" app from the iOS App Store:\
 https://apps.apple.com/us/app/files/id1232058109
 
+<<<<<<< HEAD
 Connect to the server in the iPhone files app with the `smb://<localhost>` format:\
+=======
+Connect to the server in the iPhone files app with the `smb://<localhost>` format:
+>>>>>>> 5225f4c97350de0797c44293276dfb16d8f2e3d3
 >Files > "..." > Connect to Server
 
 Access files as needed.
