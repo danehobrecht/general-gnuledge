@@ -59,5 +59,18 @@ You may now purge the temporary configuration file with `rm /etc/wpa_supplicant.
 
 Access internet as needed.
 
+## Adding executables to Debian PATH
+Edit `.bashrc` file:\
+`sudo nano /etc/bash.bashrc`
+
+Append text to the end of the file:\
+`PATH=${PATH}:/home/tmuq/platform-tools`
+
+Re-load `.bashrc` file:\
+`source /etc/bash.bashrc`
+
+Attempt to execute a binary. For elevated privelages with said binaries, enter super user mode (`su`):\
+`fastboot`
+
 # General notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
