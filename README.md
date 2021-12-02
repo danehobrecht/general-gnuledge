@@ -64,7 +64,9 @@ Edit `.bashrc` file:\
 `sudo nano /etc/bash.bashrc`
 
 Append text to the end of the file:\
-`PATH=${PATH}:/home/tmuq/platform-tools`
+`PATH=${PATH}:/<path>/<to>/<directory>`
+OR
+`export PATH=/<path>/<to>/<directory>/bin:$PATH`
 
 Re-load `.bashrc` file:\
 `source /etc/bash.bashrc`
