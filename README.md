@@ -74,5 +74,12 @@ Re-load `.bashrc` file:\
 Attempt to execute a binary. For elevated privelages with said binaries, enter super user mode (`su`):\
 `fastboot`
 
+## Accept an Android tether
+Set up USB:\
+`ip link set usb0 up`
+
+Enable USB network utilization:\
+`dhclient usb0`
+
 # General notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
