@@ -82,6 +82,9 @@ Enable USB network utilization:\
 `dhclient usb0`
 
 ## Manage Android applications with ADB
+Initialize ADB shell:\
+`adb shell`
+
 Uninstall:\
 `pm uninstall -k --user 0 <package>`
 
