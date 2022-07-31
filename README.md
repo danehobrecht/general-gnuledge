@@ -1,30 +1,11 @@
-## Wirelessly transfer files from GNU/Linux to iOS without third-party iOS applications
-Install dependencies:\
-`apt install samba samba-client cifs-utils`
-
-Add a samba user with  `smbpasswd -a <user>` and verify said user is active with `pdbedit -w -L`.
-
-Append the following information to the samba configuration file located at `/etc/samba/smb.conf`:
-```
-[Public]
-   path = /path/you'd/like/to/make/public
-   browseable = yes
-   read only = no
-   guest ok = yes
-   writeable = yes
-```
-Restart the samba service:\
-`systemctl restart smbd`
-
-Fetch the local host I.P. with `nmblookup WORKGROUP`. The output should look like this:
-```
-<localhost> WORKGROUP<00>
-```
-If you haven't already, install the first-party "Files" app from the iOS App Store:\
-https://apps.apple.com/us/app/files/id1232058109
-
-Connect to the server in the iPhone files app with the `smb://<localhost>` format:\
->Files > "..." > Connect to Server
+## Transfer files from Arch Linux to iOS
+sudo pacman -S libimobiledevice # needed protocols to connect
+yay -S ifuse # needed to mount
+systemctl start usbmuxd.service # ensure service running
+idevicepair pair # pair phone
+mkdir /mnt/iphone # place to mount
+sudo ifuse -o allow_other /mnt/iphone # mount phone
+ls /mnt/iphone # go explore
 
 Access files as needed.
 
@@ -61,7 +42,7 @@ Access internet as needed.
 
 ## Adding executables to Debian PATH
 Edit `.bashrc` file:\
-`sudo nano /etc/bash.bashrc`
+`nano /etc/bash.bashrc`
 
 Append text to the end of the file:\
 `PATH=${PATH}:/<path>/<to>/<directory>`\
@@ -97,6 +78,44 @@ Kernel release:\
 
 All available information:\
 `uname -a`
+
+## Remove lock icon from folders (change permissions)
+Navigate to home folder:\
+`cd`
+
+Run `chmod`:\
+`chmod -R a+rwx *`
+
+## Adding a printer to cups from the command line
+Add the printer's I.P. address via `lpadmin`:\
+`lpadmin -p <printer_name> -E -v "ipp://<ip_address>/ipp/print" -m everywhere`
+
+## Check RAM speed
+Run `dmidecode`:\
+`dmidecode --type 17`
+
+## Grant user sudo privelages
+Become super user:\
+`su`
+
+Open the `sudoers` file:\
+`nano /etc/sudoers`
+
+Append permission:\
+`<username> ALL=(ALL) ALL`
+
+## PDF Conversion
+JPEG to PDF:\
+`pdftoppm '<input.pdf>' '<output>' -jpeg -r 300`
+PDF to JPEG:\
+`pdftoppm -jpeg -r 300 <input.pdf> <output>`
+
+## File encryption
+Encrpt file with GPG:\
+`gpg -c <filename>`
+
+Decrypt file with GPG:\
+`gpg -d <filename>`
 
 # General notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
