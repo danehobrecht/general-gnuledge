@@ -1,15 +1,27 @@
 ## Transfer files from Arch Linux to iOS
-sudo pacman -S libimobiledevice # needed protocols to connect
-yay -S ifuse # needed to mount
-systemctl start usbmuxd.service # ensure service running
-idevicepair pair # pair phone
-mkdir /mnt/iphone # place to mount
-sudo ifuse -o allow_other /mnt/iphone # mount phone
-ls /mnt/iphone # go explore
+
+Install dependencies:\
+`pacman -S libimobiledevice`
+`yay -S ifuse`
+
+Enable USB service:\
+`systemctl start usbmuxd.service`
+
+Pair:\
+`idevicepair pair`
+
+Create a mounting directory:\
+`mkdir /mnt/iphone`
+
+Mount phone to directory:\
+`ifuse -o allow_other /mnt/iphone`
+
+Verify:\
+`ls /mnt/iphone`
 
 Access files as needed.
 
-## Establishing a Wi-Fi connection with no dependencies
+## Establishing a Wi-Fi connection with few dependencies
 
 **...assuming "wpa_supplicant" and "iw" is are available, which should be the case.**
 
