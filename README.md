@@ -105,10 +105,14 @@ Append permission:\
 `<username> ALL=(ALL) ALL`
 
 ## PDF Conversion
-JPEG to PDF:\
-`pdftoppm '<input.pdf>' '<output>' -jpeg -r 300`
 PDF to JPEG:\
 `pdftoppm -jpeg -r 300 <input.pdf> <output>`
+JPEG to PDF:\
+`pdftoppm '<input.pdf>' '<output>' -jpeg -r 300`
+
+## GIF Conversion
+GIF to JPEG:\
+`convert -verbose -coalesce <input.gif> <output.jpeg>`
 
 ## File encryption
 Encrpt file with GPG:\
@@ -120,6 +124,53 @@ Decrypt file with GPG:\
 ## IP address information
 Fetch IP metadata:\
 `whois <ip>`
+
+## Enable a paused printer with CUPS
+Find printer name:\
+`lpstat -p`
+
+Enable printer:\
+`cupsenable <printer_name>`
+
+## youtube-dl
+Download MP4 in highest quality:\
+`yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>`
+
+## Initramfs
+
+Edit config file:\
+`nano /etc/mkinitcpio.conf`
+
+Regenerate initramfs image:\
+`mkinitcpio -p linux`
+
+## Add connection to virt-manager
+
+Enable and start the `libvirtd` service:\
+`systemctl enable libvirtd.service %% systemctl start libvirtd.service`
+
+Add connection to `virt-manager`:\
+`File -> Add Connection -> Connect`
+
+## Fluidsynth and WINE
+
+Edit config file:\
+`nano /etc/conf.d/fluidsynth`
+
+```
+# Mandatory parameters (uncomment and edit)
+SOUND_FONT=/usr/share/soundfonts/FluidR3_GM.sf2
+
+# Additional optional parameters (may be useful, see 'man fluidsynth' for further info)
+OTHER_OPTS='-a alsa -m alsa_seq -p FluidSynth\ GM -r 48000'
+```
+
+Enable fluidsynth daemon:\
+systemctl --user enable fluidsynth.service
+systemctl --user start fluidsynth.service
+
+Verify in WINE settings:\
+`winecfg`
 
 # General notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
