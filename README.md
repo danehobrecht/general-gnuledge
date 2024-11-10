@@ -84,6 +84,9 @@ Uninstall:\
 Re-install:\
 `pm install-existing <package>`
 
+ADB install:\
+`adb install <filename>.apk`
+
 ## View kernel information
 Kernel release:\
 `uname -r`
@@ -94,6 +97,12 @@ All available information:\
 ## Remove lock icon from folders (change permissions)
 Navigate to home folder:\
 `cd`
+
+# Find file/folder:\
+`find -name <filename>`
+
+# Find file/folder from PWD onward:\
+`find . -name <filename>`
 
 Run `chmod`:\
 `chmod -R a+rwx *`
@@ -137,16 +146,19 @@ Decrypt file with GPG:\
 Fetch IP metadata:\
 `whois <ip>`
 
-## Enable a paused printer with CUPS
+## Enable a paused printer (CUPS)
 Find printer name:\
 `lpstat -p`
 
 Enable printer:\
 `cupsenable <printer_name>`
 
-## youtube-dl
+## yt-dlp (youtube-dl)
+Download M4A in the highest quality:\
+`yt-dlp -f 'bestaudio[ext=m4a]/m4a' <url>`
+
 Download MP4 in highest quality:\
-`yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>`
+`yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/m4a' <url>`
 
 ## Initramfs
 
@@ -166,15 +178,15 @@ Add connection to `virt-manager`:\
 
 ## Fluidsynth and WINE
 
+Install dependencies:\
+`pacman -S fluidsynth soundfont-fluid`
+
 Edit config file:\
 `nano /etc/conf.d/fluidsynth`
 
 ```
-# Mandatory parameters (uncomment and edit)
 SOUND_FONT=/usr/share/soundfonts/FluidR3_GM.sf2
-
-# Additional optional parameters (may be useful, see 'man fluidsynth' for further info)
-OTHER_OPTS='-a alsa -m alsa_seq -p FluidSynth\ GM -r 48000'
+OTHER_OPTS='-a alsa -m alsa_seq -r 48000'
 ```
 
 Enable fluidsynth daemon:\
@@ -183,6 +195,48 @@ systemctl --user start fluidsynth.service
 
 Verify in WINE settings:\
 `winecfg`
+
+## Clean up folder/file structure with `perl-rename`:
+
+Replace capital characters with lowercase ones, remove spaces, etc.:\ 
+`perl-rename -f 'y/A-Z/a-z/' * && perl-rename "s/_/-/g" * && perl-rename "s/ /-/g" * && perl-rename "s/---/-/g" *`
+
+## Convert JPEG to WEBP
+
+Convert:\
+`for file in *.jpeg; do cwebp $file -o 'basename ${file%.jpeg}'.webp; done`
+
+## Building from source
+
+Navigate to source folder directory:\
+cd /usr/local/src
+
+Install repository:\
+git clone <git-repository-url>
+
+Build:\
+Autotools build system:
+```
+  $ ./configure
+  $ make
+  $ make install
+```
+Meson build system:
+```
+  $ meson _build
+  $ cd _build
+  $ ninja
+  $ ninja install
+```
+
+## Set default file explorer in GNOME
+
+Execute:\
+`xdg-mime default org.gnome.Nautilus.desktop inode/directory`
+
+## Fetch serial number from the terminal
+Execute:\
+`dmidecode -s system-serial-number`
 
 # General notes
 "Most modern computers have at least two modes: privileged mode and user mode. In privileged mode, a program can see the actual addresses of all the memory in the system (unless there's a hypervisor, but that's another topic). In user mode, a program uses different addresses to refer to memory. The OS tells the MMU how to translate the addresses, so then the MMU can translate every memory address that the user program works with into actual memory addresses." - Unknown
